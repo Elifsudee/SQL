@@ -172,10 +172,52 @@ insert into doktorlar values('Meddem', 'Hakan Kar', '123369', 'dermatoloji');
 insert into doktorlar values('Sifa', 'Ramiz Kara', '123147', 'anestezi');
 insert into doktorlar values('Davraz', 'Okan Pul', '123147', 'ortopedi');
 
+select * from doktorlar;
 
+--soru 1=doktorlar tablosuna gorev_yeri 'Medem' olan veri girisi yapiniz
 
+insert into doktorlar values('Meddem','Hakki Oz',159624,'noroloji');
 
+--soru 2=doktor tablosuna gorev_yeri 'ok meydani' olan veri girisi yapiniz
+--parent tabloda olmayan primary key ile child tabloya veri girisi yapilamaz
 
+insert into doktorlar values('ok meydani','Hative Kar',145789,'ortopedi');--calismaz
+
+--soru 3=doktorlar tablosuna gorev_yeri null olan veri girisi yapiniz
+
+insert into doktorlar values(null,'Hasim Dal',123456,'noroloji');
+-->child tablo null deger kabul eder
+
+--soru 4=hastaneler tablosundaki hastane_adi 'Meddem' olan veriyi siliniz
+
+-->child tablodaki veri silinmeden parent tablodaki veri silinemez
+
+delete from hastaneler where hastane_adi='Meddem';--calismaz
+
+--soru 5= doktorlar tablosundaki gorev_yeri 'Meddem' olan veryi siliniz
+
+delete from doktorlar where gorev_yeri='Meddem';
+
+select * from doktorlar;
+
+--soru 6=hastaneler tablosundaki hastane adi 'Meddem' olan veriyi siliniz
+
+delete from hastaneler where hastane_adi='Meddem';
+
+select * from hastaneler;
+
+--Soru 7=hastaneler tablosunu siliniz
+--child tablo silinmeden parent tablo silinemez
+
+drop table hastaneler;--bu sebeple bu kod eror verir
+
+--soru 8=doktorlar tablosunu siliniz
+
+drop table doktorlar;
+
+--soru 9=hastaneler tablosunu siliniz
+
+drop table hastaneler;
 
 
 
