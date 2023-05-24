@@ -88,7 +88,7 @@ begin
 	
 	do $$
 	declare
-	rec record;
+	rec record;--hepsini degil sadece istedigimin bilgisini geriir
 	begin
 	select tittle, type
 	from film
